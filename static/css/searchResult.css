@@ -1,0 +1,61 @@
+body {
+    background-color: #EEF2F3;
+}
+
+#searchInput {
+    width: 350px;
+}
+
+.footer {
+    background-color: #3E3E3E;
+    height: 40px;
+    margin: 20px 0px 0px 0px;
+}
+
+.footer-copyright {
+    color: white;
+    text-align: center;
+    padding: 8px;
+}
+
+.section-1 {
+	margin-top: 80px;
+}
+
+.create-new {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.row {
+	padding-left: 150px;
+	padding-bottom: 30px;
+}
+
+.band-name {
+	font-size: 45px;
+	font-weight: bold;
+}
+
+.band-help {
+	font-size: 20px;
+}
+
+.band-loc, .band-genre, .band-instru {
+	font-family: 'Courgette', cursive;
+}
+
+.band-name, .band-help {
+	font-family: 'Oleo Script', cursive;
+}
+
+.page, .page:hover {
+	text-decoration: none;
+	color: black;
+}
+
+.brand {
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+}

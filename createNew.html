@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create a new band</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+
+	<script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+	<script type="text/javascript" src="lib/url-template/url-template.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+	<script type="text/javascript" src="lib/apigClient.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="static/css/createNew.css">
+	<script type="text/javascript" src="static/js/createNew.js"></script>
+</head>
+<body>
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="mainPage.html">
+				<div class="brand">BandUp</div>
+			</a>
+			<form class="form-inline">
+				<input class="form-control form-control-sm mr-sm-2" id="searchInput" placeholder="Band Name / Genre / Instruments You Can Play">
+				<div class="nav-text mr-sm-2">/</div>
+				<button class="btn btn-sm btn-outline-secondary mr-sm-2" type="button">Get Some Recommendation</button>
+			</form>
+		</div>
+	</nav>
+
+	<div class="container section-1">
+		<form>
+			<div class="form-group">
+				<label for="bandName">Band Name</label>
+				<input type="bandName" class="form-control" id="bandName" placeholder="">
+			</div>
+			<div class="form-group">
+				<label for="bandEmail">Contact Email</label>
+				<input type="bandEmail" class="form-control" id="bandEmail" placeholder="name@example.com">
+			</div>
+			<div class="form-group">
+				<label for="bandPhone">Contact Phone</label>
+				<input type="bandPhone" class="form-control" id="bandPhone" placeholder="">
+			</div>
+			<div class="form-group">
+				<label for="bandGenre">Genre (type genre below, separate them with comma)</label>
+				<input type="bandGenre" class="form-control" id="bandGenre" placeholder="">
+			</div>
+			<div class="form-group">
+				<label for="bandLoc">Location</label>
+				<input type="bandLoc" class="form-control" id="bandLoc" placeholder="">
+			</div>
+			<div class="form-group">
+				<label for="bandDes">Band Description</label>
+				<textarea class="form-control" id="bandDes" rows="3"></textarea>
+			</div>
+			<div class="form-group">
+				<label for="bandHelp">We're looking for musicians who can play (type instruments below, separate them with comma)</label>
+				<input type="bandHelp" class="form-control" id="bandHelp" placeholder="">
+			</div>
+			<div class="form-group">
+				<label for="bandPic">Upload Band Profile Photo</label>
+				<input type="file" class="form-control-file" id="bandPic">
+			</div>
+			<div class="form-group">
+				<label for="bandMusic">Upload Two Music files</label>
+				<input type="file" class="form-control-file" id="bandMusic-1">
+				<br>
+				<input type="file" class="form-control-file" id="bandMusic-2">
+			</div>
+		</form>
+		<div class="submit">
+			<button type="submit" class="btn btn-secondary" id="createNew">Create Your Band!</button>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="footer-copyright">@ 2019 Copyright: Cute Little Team
+		</div>
+	</footer>
+</body>
+</html>

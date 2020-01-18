@@ -1,0 +1,61 @@
+body {
+	background-color: #EEF2F3;
+}
+
+#searchInput {
+	width: 350px;
+}
+
+.card-title {
+	padding: 0px 0px 0px 5px;
+}
+
+.text {
+	margin: 20px;
+	text-align: center;
+}
+
+.cus-col {
+	padding: 0px;
+}
+
+.footer {
+	background-color: #3E3E3E;
+	height: 40px;
+	margin: 20px 0px 0px 0px;
+}
+
+.footer-copyright {
+	color: white;
+	text-align: center;
+	padding: 8px;
+}
+
+.section-1 {
+	margin: 0px;
+	margin-top: 80px;
+	padding: 0px 80px 0px 60px;
+	background-color: #3E3E3E;
+}
+
+.modal-body {
+	text-align: center;
+}
+
+#btn-login {
+	margin-right: 40px;
+}
+
+#btn-signup {
+	margin-left: 40px;
+}
+
+.card {
+	margin-bottom: 20px;
+}
+
+.brand {
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+}

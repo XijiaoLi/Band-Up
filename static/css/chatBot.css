@@ -1,0 +1,30 @@
+body {
+    background-color: #EEF2F3;
+}
+
+#searchInput {
+    width: 350px;
+}
+
+.footer {
+    background-color: #3E3E3E;
+    height: 40px;
+    margin: 20px 0px 0px 0px;
+    font-size: 1rem;
+}
+
+.footer-copyright {
+    color: white;
+    text-align: center;
+    padding: 8px;
+}
+
+.navbar {
+    font-size: 1rem;
+}
+
+.brand {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+}

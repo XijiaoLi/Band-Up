@@ -1,0 +1,92 @@
+body {
+    background-color: #EEF2F3;
+}
+
+#searchInput {
+    width: 350px;
+}
+
+.footer {
+    background-color: #3E3E3E;
+    height: 40px;
+    margin: 20px 0px 0px 0px;
+}
+
+.footer-copyright {
+    color: white;
+    text-align: center;
+    padding: 8px;
+}
+
+.section-1 {
+	margin-top: 120px;
+}
+
+.band-name {
+	font-size: 45px;
+	font-weight: bold;
+}
+
+.band-help {
+	font-size: 20px;
+}
+
+.band-loc, .band-genre, .band-instru, .band-year, .band-des {
+	font-family: 'Courgette', cursive;
+}
+
+.band-name, .band-help {
+	font-family: 'Oleo Script', cursive;
+}
+
+.card-title {
+    font-family: 'Oleo Script', cursive;
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+#music-1, #music-2 {
+	width: 400px;
+}
+
+.card {
+	margin: 5px 0px;
+}
+
+.card-body {
+	padding-top: 17px;
+	padding-bottom: 10px;
+}
+
+.col-5 {
+	margin-bottom: 10px;
+}
+
+.band-des {
+	overflow-wrap: break-word;
+}
+
+.request-btn {
+	margin-top: 20px;
+	/* float: right;
+	padding-right: 115px; */
+}
+
+.col-des {
+	margin-top: 25px;
+}
+
+.band-help-des {
+	font-family: 'Oleo Script', cursive;
+    font-size: 23px;
+}
+
+.col-6 {
+	margin-left: 35px;
+}
+
+.brand {
+	font-size: 30px;
+	font-weight: bold;
+	font-style: italic;
+}

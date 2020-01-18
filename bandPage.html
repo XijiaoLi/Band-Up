@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bandPage</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+	<script type="text/javascript" src="lib/url-template/url-template.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+	<script type="text/javascript" src="lib/apigClient.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="static/css/bandPage.css">
+	<link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Oleo+Script&display=swap" rel="stylesheet">
+	<script type="text/javascript" src="static/js/bandPage.js"></script>
+</head>
+<body>
+	<!-- request -->
+	<div class="modal" tabindex="-1" role="dialog" id="request">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Request to Join</h5>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="requestName">Name</label>
+							<input type="name" class="form-control" id="requestName" placeholder="">
+						</div>
+						<div class="form-group">
+							<label for="requestContact">Contact Information (Email or Phone)</label>
+							<input type="contact" class="form-control" id="requestContact" placeholder="">
+						</div>
+						<div class="form-group">
+							<label for="requestIntro">Please Introduce Yourself</label>
+							<textarea class="form-control" id="requestIntro" rows="3"></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					
+					<button type="button" class="btn btn-primary" id="btn-request">Send</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="mainPage.html">
+				<div class="brand">BandUp</div>
+			</a>
+			<form class="form-inline">
+				<input class="form-control form-control-sm mr-sm-2" id="searchInput" placeholder="Band Name / Genre / Instruments You Can Play">
+				<div class="nav-text mr-sm-2">/</div>
+				<button class="btn btn-sm btn-outline-secondary mr-sm-2" type="button">Get Some Recommendation</button>
+			</form>
+		</div>
+	</nav>
+	
+	<div class="container section-1">
+		
+		<div class="row">
+			<div class="col-5">
+				<img class="band-img" src="" width="445px">
+			</div>
+			<div class="col-6">
+				<div class="band-name">Carach Angren</div>
+				<div class="band-loc">New York</div>
+				<div class="band-genre">Post-Rock</div>
+				<div class="band-year">Year formed: 2019</div>
+				<br>
+				<div class="band-help">We're Looking for muscians who can play:</div>
+				<div class="band-instru">Guitar, Piano</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-5">
+				<h5 class="card-title">Check out our demos!</h5>
+				<div class="card">
+					<!-- Card music -->
+					<div class="card-body">
+						<audio controls id="music-1" preload="true">
+							<source src="">
+						</audio>
+					</div>
+				</div>
+				<div class="card">
+					<!-- Card music -->
+					<div class="card-body">
+						<audio controls id="music-2" preload="true">
+							<source src="">
+						</audio>
+					</div>
+				</div>
+				<div class="request-btn">
+					<button type="request" class="btn btn-secondary" id="requestToJoin">Request to join!</button>
+				</div>
+			</div>
+			<div class="col-6 col-des">
+				<div class="band-help-des">Band Description:</div>
+				<div class="band-des"></div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+	</div>
+
+	<footer class="footer fixed-bottom">
+		<div class="footer-copyright">@ 2019 Copyright: Cute Little Team
+		</div>
+	</footer>
+</body>
+</html>

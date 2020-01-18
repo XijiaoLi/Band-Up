@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BandUp</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<script src="static/js/config.js"></script>
+	<script type="text/javascript" src="static/js/login.js"></script>
+	<script type="text/javascript" src="static/js/signup.js"></script>
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.585.0.min.js"></script>
+	<script src="static/js/amazon-cognito-identity.min.js"></script>
+	<script src="static/js/amazon-cognito-auth.min.js"></script>
+
+	<script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+	<script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+	<script type="text/javascript" src="lib/url-template/url-template.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+	<script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+	<script type="text/javascript" src="lib/apigClient.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="static/css/mainPage.css">
+	<script type="text/javascript" src="static/js/startPage.js"></script>
+</head>
+<body>
+	<!-- login -->
+	<div class="modal" tabindex="-1" role="dialog" id="login">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header header">
+					<h5 class="modal-title">Please Login/SignUp to use BandUp</h5>
+				</div>
+				<div class="modal-body">
+					<a href="https://bandup-login.auth.us-east-1.amazoncognito.com/login?response_type=token&client_id=4vu6nodiq8jn2qldkcibaucevo&redirect_uri=https://bandup.s3.amazonaws.com/mainPage.html"><button type="button" class="btn btn-primary" id="btn-login">Login</button></a>
+					<a href="https://bandup-login.auth.us-east-1.amazoncognito.com/signup?response_type=token&client_id=4vu6nodiq8jn2qldkcibaucevo&redirect_uri=https://bandup.s3.amazonaws.com/mainPage.html"><button type="button" class="btn btn-primary" id="btn-signup">SignUp</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<div class="container">
+			<a class="navbar-brand" href="mainPage.html">
+				<div class="brand">BandUp</div>
+			</a>
+			<form class="form-inline">
+				<input class="form-control form-control-sm mr-sm-2" id="searchInput" placeholder="Band Name / Genre / Instruments You Can Play">
+				<div class="nav-text mr-sm-2">/</div>
+				<button class="btn btn-sm btn-outline-secondary mr-sm-2" type="button">Get Some Recommendation</button>
+			</form>
+		</div>
+	</nav>
+
+	<!-- section 1 -->
+	<div class="row section-1">
+		<div class="col-8 cus-col headline">
+			<a href="" target="_blank">
+				<img class="card-img-top" src=""
+				height="500px">
+			</a>
+		</div>
+		<div class="col-4 cus-col">
+			<div class="row headline">
+				<a href="" target="_blank">
+					<img class="card-img-top" src=""
+					height="250px">
+				</a>
+			</div>
+			<div class="row headline">
+				<a href="" target="_blank">
+					<img class="card-img-top" src=""
+					height="250px">
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="text">
+			<p>Check out some music</p>
+		</div>
+	</div>
+
+	<!-- section 2 -->
+	<div class="container section-2">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="card">
+					<!-- Card image -->
+					<div class="view">
+						<a href="" target="_blank">
+							<img class="card-img-top" src=""
+							height="180px">
+						</a>
+					</div>
+					<!-- Card music -->
+					<div class="card-body">
+						<h5 class="card-title"></h5>
+						<audio controls id="music" preload="true">
+							<source src="">
+						</audio>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					<!-- Card image -->
+					<div class="view">
+						
+						<a href="" target="_blank">
+							<img class="card-img-top" src=""
+							height="180px">
+						</a>
+					</div>
+					<!-- Card music -->
+					<div class="card-body">
+						<h5 class="card-title"></h5>
+						<audio controls id="music" preload="true">
+							<source src="">
+						</audio>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					<!-- Card image -->
+					<div class="view">
+						
+						<a href="" target="_blank">
+							<img class="card-img-top" src=""
+							height="180px">
+						</a>
+					</div>
+					<!-- Card music -->
+					<div class="card-body">
+						<h5 class="card-title"></h5>
+						<audio controls id="music" preload="true">
+							<source src="">
+						</audio>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="card">
+					<!-- Card image -->
+					<div class="view">
+						<a href="" target="_blank">
+							<img class="card-img-top" src=""
+							height="180px">
+						</a>
+					</div>
+					<!-- Card music -->
+					<div class="card-body">
+						<h5 class="card-title"></h5>
+						<audio controls id="music" preload="true">
+							<source src="">
+						</audio>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					<!-- Card image -->
+					<div class="view">
+						
+						<a href="" target="_blank">
+							<img class="card-img-top" src=""
+							height="180px">
+						</a>
+					</div>
+					<!-- Card music -->
+					<div class="card-body">
+						<h5 class="card-title"></h5>
+						<audio controls id="music" preload="true">
+							<source src="">
+						</audio>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="card">
+					<!-- Card image -->
+					<div class="view">
+						
+						<a href="" target="_blank">
+							<img class="card-img-top" src=""
+							height="180px">
+						</a>
+					</div>
+					<!-- Card music -->
+					<div class="card-body">
+						<h5 class="card-title"></h5>
+						<audio controls id="music" preload="true">
+							<source src="">
+						</audio>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="footer-copyright">@ 2019 Copyright: Cute Little Team
+		</div>
+	</footer>
+</body>
+</html>
